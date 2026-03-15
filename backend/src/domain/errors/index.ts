@@ -3,3 +3,4 @@ export { default as InvalidEmailError } from "./InvalidEmailError/InvalidEmailEr
 export { default as InvalidPasswordError } from "./InvalidPasswordError/InvalidPasswordError";
 export { default as InvalidAddressNumberError } from "./InvalidAddressNumberError/InvalidAddressNumberError";
 export { default as InvalidZipCodeError } from "./InvalidZipCodeError/InvalidZipCodeError";
+export { default as AddressNotFoundError } from "./AddressNotFoundError/AddressNotFoundError";
