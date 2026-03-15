@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
-import Email from "../value-objects/Email";
-import PasswordHash from "../value-objects/PasswordHash";
+import { Email, PasswordHash } from "../../value-objects";
 import Customer from "./Customer";
 
 describe("Customer", () => {

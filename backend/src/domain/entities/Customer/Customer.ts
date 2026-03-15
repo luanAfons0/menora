@@ -1,5 +1,4 @@
-import Email from "../value-objects/Email";
-import PasswordHash from "../value-objects/PasswordHash";
+import { Email, PasswordHash } from "../../value-objects";
 
 class Customer {
   constructor(
