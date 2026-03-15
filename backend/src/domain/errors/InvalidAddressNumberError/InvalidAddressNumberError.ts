@@ -1,4 +1,4 @@
-import DomainError from "./DomainError";
+import DomainError from "../DomainError/DomainError";
 
 class InvalidAddressNumberError extends DomainError {
   constructor(message: string) {

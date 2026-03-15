@@ -1,4 +1,4 @@
-import DomainError from "./DomainError";
+import DomainError from "../DomainError/DomainError";
 
 class InvalidPasswordError extends DomainError {
   constructor(message: string) {
