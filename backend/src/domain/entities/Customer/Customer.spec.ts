@@ -1,79 +1,55 @@
 import { describe, expect, it } from "vitest";
-import {
-  AddressNumber,
-  Email,
-  PasswordHash,
-  ZipCode,
-} from "../../value-objects";
-import Customer from "./Customer";
-import Address from "../Address/Address";
 import { AddressNotFoundError } from "../../errors";
+import {
+  createAddressMock,
+  ADDRESS_MOCK_DEFAULTS,
+} from "../Address/Address.mock";
+import { createCustomerMock, CUSTOMER_MOCK_DEFAULTS } from "./Customer.mock";
 
 describe("Customer", () => {
-  const id = "mock-uuid-example";
-  const email = new Email("test@example.com");
-  const passwordHash = PasswordHash.from("somehashedvaluehere");
-
   it("Should create a valid customer", () => {
-    const act = new Customer(id, "Test", "Example", email, passwordHash);
+    const act = createCustomerMock();
 
-    expect(act.id).toBe(id);
-    expect(act.firstName).toBe("Test");
-    expect(act.lastName).toBe("Example");
-    expect(act.email.value).toBe(email.value);
-    expect(act.password.hash).toBe(passwordHash.hash);
+    expect(act.id).toBe(CUSTOMER_MOCK_DEFAULTS.id);
+    expect(act.firstName).toBe(CUSTOMER_MOCK_DEFAULTS.firstName);
+    expect(act.lastName).toBe(CUSTOMER_MOCK_DEFAULTS.lastName);
+    expect(act.email.value).toBe(CUSTOMER_MOCK_DEFAULTS.email.value);
+    expect(act.password.hash).toBe(CUSTOMER_MOCK_DEFAULTS.passwordHash.hash);
   });
 
   it("Should add a address to the customer", () => {
-    const act = new Customer(id, "Test", "Example", email, passwordHash);
-
-    const addressId = "mock-uuid";
-    const zipCode = new ZipCode("12345-678");
-    const addressNumber = new AddressNumber("123");
-    const address = new Address(
-      addressId,
-      "street",
-      "city",
-      "state",
-      "country",
-      zipCode,
-      addressNumber,
-    );
+    const act = createCustomerMock();
+    const address = createAddressMock();
 
     act.addAddress(address);
     expect(act.addresses).toHaveLength(1);
-    expect(act.addresses[0].id).toBe(addressId);
-    expect(act.addresses[0].street).toBe("street");
-    expect(act.addresses[0].city).toBe("city");
-    expect(act.addresses[0].country).toBe("country");
-    expect(act.addresses[0].number.value).toBe("123");
-    expect(act.addresses[0].state).toBe("state");
-    expect(act.addresses[0].zipCode.value).toBe(zipCode.value);
+
+    expect(act.addresses[0].id).toBe(ADDRESS_MOCK_DEFAULTS.id);
+    expect(act.addresses[0].street).toBe(ADDRESS_MOCK_DEFAULTS.street);
+    expect(act.addresses[0].city).toBe(ADDRESS_MOCK_DEFAULTS.city);
+    expect(act.addresses[0].state).toBe(ADDRESS_MOCK_DEFAULTS.state);
+    expect(act.addresses[0].country).toBe(ADDRESS_MOCK_DEFAULTS.country);
+    expect(act.addresses[0].zipCode.value).toBe(
+      ADDRESS_MOCK_DEFAULTS.zipCode.value,
+    );
+    expect(act.addresses[0].number.value).toBe(
+      ADDRESS_MOCK_DEFAULTS.number.value,
+    );
   });
 
   it("Should remove a address to the customer", () => {
-    const act = new Customer(id, "Test", "Example", email, passwordHash);
-
-    const addressId = "mock-uuid";
-    const zipCode = new ZipCode("12345-678");
-    const addressNumber = new AddressNumber("123");
-    const address = new Address(
-      addressId,
-      "street",
-      "city",
-      "state",
-      "country",
-      zipCode,
-      addressNumber,
-    );
+    const act = createCustomerMock();
+    const address = createAddressMock();
 
     act.addAddress(address);
-    act.removeAddress(addressId);
+    act.removeAddress(address.id);
     expect(act.addresses).toHaveLength(0);
   });
 
   it("should throw when removing a non-existing address", () => {
-    const customer = new Customer(id, "Test", "Example", email, passwordHash);
-    expect(() => customer.removeAddress("non-existing-id")).toThrow(AddressNotFoundError);
+    const customer = createCustomerMock();
+    expect(() => customer.removeAddress("non-existing-id")).toThrow(
+      AddressNotFoundError,
+    );
   });
 });

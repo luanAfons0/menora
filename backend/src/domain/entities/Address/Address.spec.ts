@@ -1,29 +1,16 @@
 import { describe, expect, it } from "vitest";
-import AddressNumber from "../../value-objects/AddressNumber/AddressNumber";
-import ZipCode from "../../value-objects/ZipCode/ZipCode";
-import Address from "./Address";
+import { createAddressMock, ADDRESS_MOCK_DEFAULTS } from "./Address.mock";
 
 describe("Address", () => {
   it("Should create a address", () => {
-    const id = "mock-uuid";
-    const zipCode = new ZipCode("12345-678");
-    const addressNumber = new AddressNumber("123");
-    const act = new Address(
-      id,
-      "street",
-      "city",
-      "state",
-      "country",
-      zipCode,
-      addressNumber,
-    );
+    const act = createAddressMock();
 
-    expect(act.id).toBe(id);
-    expect(act.street).toBe("street");
-    expect(act.city).toBe("city");
-    expect(act.state).toBe("state");
-    expect(act.country).toBe("country");
-    expect(act.zipCode.value).toBe("12345-678");
-    expect(act.number.value).toBe("123");
+    expect(act.id).toBe(ADDRESS_MOCK_DEFAULTS.id);
+    expect(act.street).toBe(ADDRESS_MOCK_DEFAULTS.street);
+    expect(act.city).toBe(ADDRESS_MOCK_DEFAULTS.city);
+    expect(act.state).toBe(ADDRESS_MOCK_DEFAULTS.state);
+    expect(act.country).toBe(ADDRESS_MOCK_DEFAULTS.country);
+    expect(act.zipCode.value).toBe(ADDRESS_MOCK_DEFAULTS.zipCode.value);
+    expect(act.number.value).toBe(ADDRESS_MOCK_DEFAULTS.number.value);
   });
 });
