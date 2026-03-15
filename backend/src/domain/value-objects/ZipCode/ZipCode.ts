@@ -1,4 +1,4 @@
-import InvalidZipCodeError from "../errors/InvalidZipCodeError";
+import { InvalidZipCodeError } from "../../errors";
 
 class ZipCode {
   public value: string;

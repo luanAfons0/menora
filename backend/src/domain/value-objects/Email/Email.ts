@@ -1,4 +1,4 @@
-import InvalidEmailError from "../errors/InvalidEmailError";
+import { InvalidEmailError } from "../../errors";
 
 class Email {
   public value: string;

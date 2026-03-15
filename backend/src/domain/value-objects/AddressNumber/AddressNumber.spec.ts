@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import AddressNumber from "./AddressNumber";
-import InvalidAddressNumberError from "../errors/InvalidAddressNumberError";
+import { InvalidAddressNumberError } from "../../errors";
 
 describe("AddressNumber", () => {
   it("should reject a number that contains letters", () => {

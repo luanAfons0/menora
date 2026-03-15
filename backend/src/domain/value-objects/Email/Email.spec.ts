@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import Email from "./Email";
-import InvalidEmailError from "../errors/InvalidEmailError";
+import { InvalidEmailError } from "../../errors";
 
 describe("Email", () => {
   it("Should reject a email without @", () => {

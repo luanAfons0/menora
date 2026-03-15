@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import Password from "./Password";
-import InvalidPasswordError from "../errors/InvalidPasswordError";
+import { InvalidPasswordError } from "../../errors";
 
 describe("Password", () => {
   it("Should reject a password with less that 8 characters", () => {

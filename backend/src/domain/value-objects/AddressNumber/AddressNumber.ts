@@ -1,4 +1,4 @@
-import InvalidAddressNumberError from "../errors/InvalidAddressNumberError";
+import { InvalidAddressNumberError } from "../../errors";
 
 class AddressNumber {
   public value: string;

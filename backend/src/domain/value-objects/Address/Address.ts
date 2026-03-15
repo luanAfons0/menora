@@ -1,5 +1,5 @@
-import AddressNumber from "../value-objects/AddressNumber";
-import ZipCode from "../value-objects/ZipCode";
+import AddressNumber from "../AddressNumber/AddressNumber";
+import ZipCode from "../ZipCode/ZipCode";
 
 class Address {
   constructor(
