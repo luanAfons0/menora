@@ -1,5 +1,5 @@
-import { Email, PasswordHash } from "../../value-objects";
 import { AddressNotFoundError } from "../../errors";
+import { Email, PasswordHash } from "../../value-objects";
 import Address from "../Address/Address";
 
 class Customer {
@@ -18,8 +18,20 @@ class Customer {
 
   public removeAddress(id: string): void {
     const index = this.addresses.findIndex((address) => address.id === id);
+
     if (index === -1) throw new AddressNotFoundError();
+
     this.addresses.splice(index, 1);
+  }
+
+  public updateAddress(newInfos: Address) {
+    const index = this.addresses.findIndex(
+      (address) => address.id === newInfos.id,
+    );
+
+    if (index === -1) throw new AddressNotFoundError();
+
+    this.addresses[index] = newInfos;
   }
 }
 
