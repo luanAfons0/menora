@@ -1,6 +1,6 @@
-import DomainError from "@/domain/errors/DomainError/DomainError";
+import LogicalError from "@/domain/errors/base/LogicalError";
 
-class CustomerLimitAddressError extends DomainError {
+class CustomerLimitAddressError extends LogicalError {
   constructor() {
     super("The customer reached the limit address quantity");
   }

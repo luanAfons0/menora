@@ -1,6 +1,10 @@
-export { default as DomainError } from "./DomainError/DomainError";
-export { default as InvalidEmailError } from "./InvalidEmailError/InvalidEmailError";
-export { default as InvalidPasswordError } from "./InvalidPasswordError/InvalidPasswordError";
-export { default as InvalidAddressNumberError } from "./InvalidAddressNumberError/InvalidAddressNumberError";
-export { default as InvalidZipCodeError } from "./InvalidZipCodeError/InvalidZipCodeError";
-export { default as AddressNotFoundError } from "./AddressNotFoundError/AddressNotFoundError";
+export { default as DomainError } from "./base/DomainError";
+export { default as NotFoundError } from "./base/NotFoundError";
+export { default as ValidationError } from "./base/ValidationError";
+export { default as LogicalError } from "./base/LogicalError";
+export { default as InvalidEmailError } from "./validation/InvalidEmailError";
+export { default as InvalidPasswordError } from "./validation/InvalidPasswordError";
+export { default as InvalidAddressNumberError } from "./validation/InvalidAddressNumberError";
+export { default as InvalidZipCodeError } from "./validation/InvalidZipCodeError";
+export { default as AddressNotFoundError } from "./not-found/AddressNotFoundError";
+export { default as CustomerLimitAddressError } from "./logical/CustomerLimitAddressError";
