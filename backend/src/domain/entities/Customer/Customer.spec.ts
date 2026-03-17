@@ -6,6 +6,7 @@ import {
 } from "@/domain/entities/Address/Address.mock";
 import { createCustomerMock, CUSTOMER_MOCK_DEFAULTS } from "./Customer.mock";
 import { AddressNumber, ZipCode } from "@/domain/value-objects";
+import CustomerLimitAddressError from "@/domain/errors/CustomerLimitAddressError/CustomerLimitAddressError";
 
 describe("Customer", () => {
   it("Should create a valid customer", () => {
@@ -83,5 +84,18 @@ describe("Customer", () => {
     expect(() => customer.removeAddress("non-existing-id")).toThrow(
       AddressNotFoundError,
     );
+  });
+
+  it("should limit the customer addresses length up to 5", () => {
+    const customer = createCustomerMock();
+    const address = createAddressMock();
+
+    const act = () => {
+      for (var i = 0; i < 6; i++) {
+        customer.addAddress(address);
+      }
+    };
+
+    expect(act).toThrow(CustomerLimitAddressError);
   });
 });
