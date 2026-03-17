@@ -1,7 +1,7 @@
 import { AddressNotFoundError } from "@/domain/errors";
 import { Email, PasswordHash } from "@/domain/value-objects";
 import Address from "@/domain/entities/Address/Address";
-import CustomerLimitAddressError from "@/domain/errors/CustomerLimitAddressError/CustomerLimitAddressError";
+import CustomerLimitAddressError from "@/domain/errors/logical/CustomerLimitAddressError";
 
 class Customer {
   constructor(

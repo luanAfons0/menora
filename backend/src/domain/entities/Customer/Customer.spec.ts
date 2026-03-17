@@ -6,7 +6,7 @@ import {
 } from "@/domain/entities/Address/Address.mock";
 import { createCustomerMock, CUSTOMER_MOCK_DEFAULTS } from "./Customer.mock";
 import { AddressNumber, ZipCode } from "@/domain/value-objects";
-import CustomerLimitAddressError from "@/domain/errors/CustomerLimitAddressError/CustomerLimitAddressError";
+import CustomerLimitAddressError from "@/domain/errors/logical/CustomerLimitAddressError";
 
 describe("Customer", () => {
   it("Should create a valid customer", () => {
