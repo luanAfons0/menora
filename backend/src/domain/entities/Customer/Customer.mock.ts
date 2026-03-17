@@ -4,7 +4,7 @@ import Customer from "./Customer";
 const CUSTOMER_MOCK_DEFAULTS = {
   id: "mock-uuid-example",
   email: new Email("test@example.com"),
-  passwordHash: PasswordHash.from("somehashedvaluehere"),
+  password: PasswordHash.from("somehashedvaluehere"),
   firstName: "Test",
   lastName: "Example",
 };
@@ -13,7 +13,7 @@ function createCustomerMock(customValues?: Partial<Customer>) {
   const mergedValues = {
     id: CUSTOMER_MOCK_DEFAULTS.id,
     email: CUSTOMER_MOCK_DEFAULTS.email,
-    password: CUSTOMER_MOCK_DEFAULTS.passwordHash,
+    password: CUSTOMER_MOCK_DEFAULTS.password,
     firstName: CUSTOMER_MOCK_DEFAULTS.firstName,
     lastName: CUSTOMER_MOCK_DEFAULTS.lastName,
     ...customValues,

@@ -16,7 +16,7 @@ describe("Customer", () => {
     expect(act.firstName).toBe(CUSTOMER_MOCK_DEFAULTS.firstName);
     expect(act.lastName).toBe(CUSTOMER_MOCK_DEFAULTS.lastName);
     expect(act.email.value).toBe(CUSTOMER_MOCK_DEFAULTS.email.value);
-    expect(act.password.hash).toBe(CUSTOMER_MOCK_DEFAULTS.passwordHash.hash);
+    expect(act.password.hash).toBe(CUSTOMER_MOCK_DEFAULTS.password.hash);
   });
 
   it("Should add a address to the customer", () => {
