@@ -1,6 +1,6 @@
-import { AddressNotFoundError } from "../../errors";
-import { Email, PasswordHash } from "../../value-objects";
-import Address from "../Address/Address";
+import { AddressNotFoundError } from "@/domain/errors";
+import { Email, PasswordHash } from "@/domain/value-objects";
+import Address from "@/domain/entities/Address/Address";
 
 class Customer {
   constructor(

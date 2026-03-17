@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { AddressNotFoundError } from "../../errors";
+import { AddressNotFoundError } from "@/domain/errors";
 import {
   createAddressMock,
   ADDRESS_MOCK_DEFAULTS,
-} from "../Address/Address.mock";
+} from "@/domain/entities/Address/Address.mock";
 import { createCustomerMock, CUSTOMER_MOCK_DEFAULTS } from "./Customer.mock";
-import { AddressNumber, ZipCode } from "../../value-objects";
+import { AddressNumber, ZipCode } from "@/domain/value-objects";
 
 describe("Customer", () => {
   it("Should create a valid customer", () => {

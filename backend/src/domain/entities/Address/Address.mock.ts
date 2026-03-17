@@ -1,4 +1,4 @@
-import { AddressNumber, ZipCode } from "../../value-objects";
+import { AddressNumber, ZipCode } from "@/domain/value-objects";
 import Address from "./Address";
 
 const ADDRESS_MOCK_DEFAULTS = {

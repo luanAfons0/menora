@@ -1,4 +1,4 @@
-import { InvalidEmailError } from "../../errors";
+import { InvalidEmailError } from "@/domain/errors";
 
 class Email {
   public value: string;

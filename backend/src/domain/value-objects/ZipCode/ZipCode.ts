@@ -1,4 +1,4 @@
-import { InvalidZipCodeError } from "../../errors";
+import { InvalidZipCodeError } from "@/domain/errors";
 
 class ZipCode {
   public value: string;

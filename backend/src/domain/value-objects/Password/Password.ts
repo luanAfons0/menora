@@ -1,4 +1,4 @@
-import { InvalidPasswordError } from "../../errors";
+import { InvalidPasswordError } from "@/domain/errors";
 
 class Password {
   public value: string;

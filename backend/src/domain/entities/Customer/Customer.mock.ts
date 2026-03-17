@@ -1,4 +1,4 @@
-import { Email, PasswordHash } from "../../value-objects";
+import { Email, PasswordHash } from "@/domain/value-objects";
 import Customer from "./Customer";
 
 const CUSTOMER_MOCK_DEFAULTS = {
