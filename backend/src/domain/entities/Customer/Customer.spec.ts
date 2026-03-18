@@ -7,6 +7,8 @@ import {
 import { createCustomerMock, CUSTOMER_MOCK_DEFAULTS } from "./Customer.mock";
 import { AddressNumber, ZipCode } from "@/domain/value-objects";
 import CustomerLimitAddressError from "@/domain/errors/logical/CustomerLimitAddressError";
+import Uuid from "@/domain/value-objects/Uuid/Uuid";
+import { UUID_MOCK_VALUE } from "@/domain/value-objects/Uuid/Uuid.mock";
 
 describe("Customer", () => {
   it("Should create a valid customer", () => {
@@ -81,7 +83,7 @@ describe("Customer", () => {
 
   it("should throw when removing a non-existing address", () => {
     const customer = createCustomerMock();
-    expect(() => customer.removeAddress("non-existing-id")).toThrow(
+    expect(() => customer.removeAddress(new Uuid(UUID_MOCK_VALUE))).toThrow(
       AddressNotFoundError,
     );
   });

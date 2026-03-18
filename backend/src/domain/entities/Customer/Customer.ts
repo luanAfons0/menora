@@ -2,10 +2,11 @@ import { AddressNotFoundError } from "@/domain/errors";
 import { Email, PasswordHash } from "@/domain/value-objects";
 import Address from "@/domain/entities/Address/Address";
 import CustomerLimitAddressError from "@/domain/errors/logical/CustomerLimitAddressError";
+import Uuid from "@/domain/value-objects/Uuid/Uuid";
 
 class Customer {
   constructor(
-    public readonly id: string,
+    public readonly id: Uuid,
     public firstName: string,
     public lastName: string,
     public email: Email,
@@ -21,8 +22,10 @@ class Customer {
     this.addresses.push(address);
   }
 
-  public removeAddress(id: string): void {
-    const index = this.addresses.findIndex((address) => address.id === id);
+  public removeAddress(id: Uuid): void {
+    const index = this.addresses.findIndex(
+      (address) => address.id.value === id.value,
+    );
 
     if (index === -1) throw new AddressNotFoundError();
 
@@ -31,7 +34,7 @@ class Customer {
 
   public updateAddress(newInfos: Address) {
     const index = this.addresses.findIndex(
-      (address) => address.id === newInfos.id,
+      (address) => address.id.value === newInfos.id.value,
     );
 
     if (index === -1) throw new AddressNotFoundError();
