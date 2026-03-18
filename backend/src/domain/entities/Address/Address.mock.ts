@@ -1,8 +1,10 @@
 import { AddressNumber, ZipCode } from "@/domain/value-objects";
 import Address from "./Address";
+import Uuid from "@/domain/value-objects/Uuid/Uuid";
+import { UUID_MOCK_VALUE } from "@/domain/value-objects/Uuid/Uuid.mock";
 
 const ADDRESS_MOCK_DEFAULTS = {
-  id: "mock-uuid",
+  id: new Uuid(UUID_MOCK_VALUE),
   street: "street",
   city: "city",
   state: "state",
