@@ -1,8 +1,10 @@
 import { Email, PasswordHash } from "@/domain/value-objects";
 import User from "./User";
+import Uuid from "@/domain/value-objects/Uuid/Uuid";
+import { UUID_MOCK_VALUE } from "@/domain/value-objects/Uuid/Uuid.mock";
 
 const USER_MOCK_DEFAULTS = {
-  id: "mock-uuid-example",
+  id: new Uuid(UUID_MOCK_VALUE),
   email: new Email("test@example.com"),
   password: PasswordHash.from("somehashedvaluehere"),
   firstName: "Test",
