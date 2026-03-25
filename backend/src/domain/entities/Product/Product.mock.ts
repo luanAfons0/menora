@@ -30,6 +30,7 @@ function createProductMock(customValues?: Partial<Product>) {
     mergedValues.sku,
     mergedValues.slug,
     mergedValues.price,
+    mergedValues.categoriesIds,
   );
 }
 
