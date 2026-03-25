@@ -1,11 +1,7 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import DomainError from "./DomainError";
 
-class DomainErrorExample extends DomainError {
-  constructor(message: string) {
-    super(message);
-  }
-}
+class DomainErrorExample extends DomainError {}
 
 describe("DomainError", () => {
   it("Set the error name to the subclass name", () => {

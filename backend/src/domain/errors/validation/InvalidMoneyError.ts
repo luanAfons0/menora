@@ -1,9 +1,5 @@
 import ValidationError from "@/domain/errors/base/ValidationError";
 
-class InvalidMoneyError extends ValidationError {
-  constructor(message: string) {
-    super(message);
-  }
-}
+class InvalidMoneyError extends ValidationError {}
 
 export default InvalidMoneyError;
