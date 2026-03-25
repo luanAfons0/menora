@@ -13,3 +13,5 @@ export { default as InvalidSKUError } from "./validation/InvalidSKUError";
 export { default as InvalidSlugError } from "./validation/InvalidSlugError";
 export { default as AddressNotFoundError } from "./not-found/AddressNotFoundError";
 export { default as CustomerLimitAddressError } from "./logical/CustomerLimitAddressError";
+export { default as CategoryAlreadyAssignedError } from "./logical/CategoryAlreadyAssignedError";
+export { default as CategoryNotFoundError } from "./not-found/CategoryNotFoundError";
