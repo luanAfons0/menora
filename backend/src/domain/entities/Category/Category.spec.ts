@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { createCategoryMock } from "./Category.mock";
 import { UUID_MOCK_VALUE } from "@/domain/value-objects/Uuid/Uuid.mock";
+import { createCategoryMock } from "./Category.mock";
 
 describe("Category", () => {
   it("Should create a valid category", () => {

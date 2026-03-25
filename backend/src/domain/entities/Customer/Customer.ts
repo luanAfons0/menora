@@ -1,8 +1,8 @@
+import type Address from "@/domain/entities/Address/Address";
 import { AddressNotFoundError } from "@/domain/errors";
-import { Email, PasswordHash } from "@/domain/value-objects";
-import Address from "@/domain/entities/Address/Address";
 import CustomerLimitAddressError from "@/domain/errors/logical/CustomerLimitAddressError";
-import Uuid from "@/domain/value-objects/Uuid/Uuid";
+import type { Email, PasswordHash } from "@/domain/value-objects";
+import type Uuid from "@/domain/value-objects/Uuid/Uuid";
 
 class Customer {
   constructor(

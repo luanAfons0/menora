@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import Label from "./Label";
 import { ValidationError } from "@/domain/errors";
+import Label from "./Label";
 
 describe("Label", () => {
   it("Should create a valid label", () => {

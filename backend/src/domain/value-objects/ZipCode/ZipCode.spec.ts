@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import ZipCode from "./ZipCode";
 import { InvalidZipCodeError } from "@/domain/errors";
+import ZipCode from "./ZipCode";
 
 describe("ZipCode", () => {
   it("should reject a zipCode without a dash", () => {

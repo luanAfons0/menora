@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createAddressMock, ADDRESS_MOCK_DEFAULTS } from "./Address.mock";
+import { ADDRESS_MOCK_DEFAULTS, createAddressMock } from "./Address.mock";
 
 describe("Address", () => {
   it("Should create a address", () => {

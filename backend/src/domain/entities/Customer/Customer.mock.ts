@@ -1,7 +1,7 @@
 import { Email, PasswordHash } from "@/domain/value-objects";
-import Customer from "./Customer";
 import Uuid from "@/domain/value-objects/Uuid/Uuid";
 import { UUID_MOCK_VALUE } from "@/domain/value-objects/Uuid/Uuid.mock";
+import Customer from "./Customer";
 
 const CUSTOMER_MOCK_DEFAULTS = {
   id: new Uuid(UUID_MOCK_VALUE),
@@ -30,4 +30,4 @@ function createCustomerMock(customValues?: Partial<Customer>) {
   );
 }
 
-export { createCustomerMock, CUSTOMER_MOCK_DEFAULTS };
+export { CUSTOMER_MOCK_DEFAULTS, createCustomerMock };

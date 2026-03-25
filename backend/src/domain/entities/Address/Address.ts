@@ -1,6 +1,6 @@
-import AddressNumber from "@/domain/value-objects/AddressNumber/AddressNumber";
-import Uuid from "@/domain/value-objects/Uuid/Uuid";
-import ZipCode from "@/domain/value-objects/ZipCode/ZipCode";
+import type AddressNumber from "@/domain/value-objects/AddressNumber/AddressNumber";
+import type Uuid from "@/domain/value-objects/Uuid/Uuid";
+import type ZipCode from "@/domain/value-objects/ZipCode/ZipCode";
 
 class Address {
   constructor(

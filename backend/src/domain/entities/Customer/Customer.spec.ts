@@ -1,14 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { AddressNotFoundError } from "@/domain/errors";
 import {
-  createAddressMock,
   ADDRESS_MOCK_DEFAULTS,
+  createAddressMock,
 } from "@/domain/entities/Address/Address.mock";
-import { createCustomerMock, CUSTOMER_MOCK_DEFAULTS } from "./Customer.mock";
-import { AddressNumber, ZipCode } from "@/domain/value-objects";
+import { AddressNotFoundError } from "@/domain/errors";
 import CustomerLimitAddressError from "@/domain/errors/logical/CustomerLimitAddressError";
+import { AddressNumber, ZipCode } from "@/domain/value-objects";
 import Uuid from "@/domain/value-objects/Uuid/Uuid";
 import { UUID_MOCK_VALUE } from "@/domain/value-objects/Uuid/Uuid.mock";
+import { CUSTOMER_MOCK_DEFAULTS, createCustomerMock } from "./Customer.mock";
 
 describe("Customer", () => {
   it("Should create a valid customer", () => {
@@ -93,7 +93,7 @@ describe("Customer", () => {
     const address = createAddressMock();
 
     const act = () => {
-      for (var i = 0; i < 6; i++) {
+      for (let i = 0; i < 6; i++) {
         customer.addAddress(address);
       }
     };

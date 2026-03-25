@@ -1,7 +1,7 @@
 import { AddressNumber, ZipCode } from "@/domain/value-objects";
-import Address from "./Address";
 import Uuid from "@/domain/value-objects/Uuid/Uuid";
 import { UUID_MOCK_VALUE } from "@/domain/value-objects/Uuid/Uuid.mock";
+import Address from "./Address";
 
 const ADDRESS_MOCK_DEFAULTS = {
   id: new Uuid(UUID_MOCK_VALUE),
@@ -38,4 +38,4 @@ function createAddressMock(customValues?: Partial<Address>) {
   return address;
 }
 
-export { createAddressMock, ADDRESS_MOCK_DEFAULTS };
+export { ADDRESS_MOCK_DEFAULTS, createAddressMock };

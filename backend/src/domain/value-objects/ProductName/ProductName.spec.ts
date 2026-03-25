@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import ProductName from "./ProductName";
 import InvalidProductNameError from "@/domain/errors/validation/InvalidProductNameError";
+import ProductName from "./ProductName";
 
 describe("ProductName", () => {
   it("should create a valid product name", () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import SKU from "./SKU";
 import InvalidSKUError from "@/domain/errors/validation/InvalidSKUError";
+import SKU from "./SKU";
 
 describe("SKU", () => {
   it("should create a valid SKU", () => {

@@ -4,7 +4,7 @@ class Slug {
   public value: string;
 
   constructor(raw: string) {
-    if (!/^[a-z0-9\-]+$/.test(raw)) {
+    if (!/^[a-z0-9-]+$/.test(raw)) {
       throw new InvalidSlugError("Invalid slug");
     }
 

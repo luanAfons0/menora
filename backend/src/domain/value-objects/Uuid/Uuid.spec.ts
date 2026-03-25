@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import Uuid from "./Uuid";
 import InvalidUuidError from "@/domain/errors/validation/InvalidUuid";
+import Uuid from "./Uuid";
 
 describe("Uuid", () => {
   it("Should reject a invalid UUID", () => {

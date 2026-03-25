@@ -1,6 +1,6 @@
-import { describe, it, expect } from "vitest";
-import Password from "./Password";
+import { describe, expect, it } from "vitest";
 import { InvalidPasswordError } from "@/domain/errors";
+import Password from "./Password";
 
 describe("Password", () => {
   it("Should reject a password with less that 8 characters", () => {

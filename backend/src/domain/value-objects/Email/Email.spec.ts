@@ -1,6 +1,6 @@
-import { describe, it, expect } from "vitest";
-import Email from "./Email";
+import { describe, expect, it } from "vitest";
 import { InvalidEmailError } from "@/domain/errors";
+import Email from "./Email";
 
 describe("Email", () => {
   it("Should reject a email without @", () => {

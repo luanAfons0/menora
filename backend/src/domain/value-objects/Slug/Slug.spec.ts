@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import Slug from "./Slug";
 import InvalidSlugError from "@/domain/errors/validation/InvalidSlugError";
+import Slug from "./Slug";
 
 describe("Slug", () => {
   it("should create a valid slug", () => {

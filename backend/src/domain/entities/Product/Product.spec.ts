@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { createProductMock, PRODUCT_MOCK_DEFAULTS } from "./Product.mock";
+import {
+  CategoryAlreadyAssignedError,
+  CategoryNotFoundError,
+} from "@/domain/errors";
 import { createCategoryMock } from "../Category/Category.mock";
-import { CategoryAlreadyAssignedError, CategoryNotFoundError } from "@/domain/errors";
+import { createProductMock, PRODUCT_MOCK_DEFAULTS } from "./Product.mock";
 
 describe("Product", () => {
   it("should create a valid product", () => {

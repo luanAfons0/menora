@@ -20,7 +20,7 @@ class Password {
 
     if (!/[!@#$%^&*(),.?":{}|<>]/.test(raw)) {
       throw new InvalidPasswordError(
-        "Password must contain a special character \(!@#$%^&*(),.?:{}|<>\)",
+        "Password must contain a special character (!@#$%^&*(),.?:{}|<>)",
       );
     }
 

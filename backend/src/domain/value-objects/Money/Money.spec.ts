@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import Money from "./Money";
 import InvalidMoneyError from "@/domain/errors/validation/InvalidMoneyError";
+import Money from "./Money";
 
 describe("Money", () => {
   it("should create a valid money with default currency", () => {

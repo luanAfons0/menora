@@ -4,7 +4,7 @@ class SKU {
   public value: string;
 
   constructor(raw: string) {
-    if (!/^[A-Z0-9\-]+$/.test(raw)) {
+    if (!/^[A-Z0-9-]+$/.test(raw)) {
       throw new InvalidSKUError("Invalid SKU format");
     }
 

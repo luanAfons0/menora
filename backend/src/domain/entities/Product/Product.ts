@@ -1,9 +1,12 @@
-import { CategoryAlreadyAssignedError, CategoryNotFoundError } from "@/domain/errors";
-import Money from "@/domain/value-objects/Money/Money";
-import ProductName from "@/domain/value-objects/ProductName/ProductName";
-import SKU from "@/domain/value-objects/SKU/SKU";
-import Slug from "@/domain/value-objects/Slug/Slug";
-import Uuid from "@/domain/value-objects/Uuid/Uuid";
+import {
+  CategoryAlreadyAssignedError,
+  CategoryNotFoundError,
+} from "@/domain/errors";
+import type Money from "@/domain/value-objects/Money/Money";
+import type ProductName from "@/domain/value-objects/ProductName/ProductName";
+import type SKU from "@/domain/value-objects/SKU/SKU";
+import type Slug from "@/domain/value-objects/Slug/Slug";
+import type Uuid from "@/domain/value-objects/Uuid/Uuid";
 
 class Product {
   constructor(
