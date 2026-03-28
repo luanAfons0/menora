@@ -9,9 +9,25 @@ class Address {
     public city: string,
     public state: string,
     public country: string,
-    public readonly zipCode: ZipCode,
-    public readonly number: AddressNumber,
+    private _zipCode: ZipCode,
+    private _number: AddressNumber,
   ) {}
+
+  get zipCode() {
+    return this._zipCode;
+  }
+
+  public updateZipCode(zipCode: ZipCode) {
+    this._zipCode = zipCode;
+  }
+
+  get number() {
+    return this._number;
+  }
+
+  public updateNumber(number: AddressNumber) {
+    this._number = number;
+  }
 }
 
 export default Address;
