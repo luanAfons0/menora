@@ -11,15 +11,51 @@ import type Uuid from "@/domain/value-objects/Uuid/Uuid";
 class Product {
   constructor(
     public readonly id: Uuid,
-    public readonly name: ProductName,
-    public readonly sku: SKU,
-    public readonly slug: Slug,
-    public readonly price: Money,
-    public readonly categoriesIds: Array<Uuid> = [],
+    private _name: ProductName,
+    private _sku: SKU,
+    private _slug: Slug,
+    private _price: Money,
+    private _categoriesIds: Array<Uuid> = [],
   ) {}
 
+  get name() {
+    return this._name;
+  }
+
+  public updateName(name: ProductName) {
+    this._name = name;
+  }
+
+  get sku() {
+    return this._sku;
+  }
+
+  public updateSKU(sku: SKU) {
+    this._sku = sku;
+  }
+
+  get slug() {
+    return this._slug;
+  }
+
+  public updateSlug(slug: Slug) {
+    this._slug = slug;
+  }
+
+  get price() {
+    return this._price;
+  }
+
+  public updatePrice(price: Money) {
+    this._price = price;
+  }
+
+  get categoriesIds(): ReadonlyArray<Uuid> {
+    return this._categoriesIds;
+  }
+
   public addCategory(uuid: Uuid) {
-    const categoryAlreadyRegistered = this.categoriesIds.find(
+    const categoryAlreadyRegistered = this._categoriesIds.find(
       (id) => id.value === uuid.value,
     );
 
@@ -27,17 +63,19 @@ class Product {
       throw new CategoryAlreadyAssignedError();
     }
 
-    this.categoriesIds.push(uuid);
+    this._categoriesIds.push(uuid);
   }
 
   public removeCategory(uuid: Uuid) {
-    const index = this.categoriesIds.findIndex((id) => id.value === uuid.value);
+    const index = this._categoriesIds.findIndex(
+      (id) => id.value === uuid.value,
+    );
 
     if (index === -1) {
       throw new CategoryNotFoundError();
     }
 
-    this.categoriesIds.splice(index, 1);
+    this._categoriesIds.splice(index, 1);
   }
 }
 
