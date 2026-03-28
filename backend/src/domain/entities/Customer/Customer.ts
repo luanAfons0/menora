@@ -9,37 +9,57 @@ class Customer {
     public readonly id: Uuid,
     public firstName: string,
     public lastName: string,
-    public readonly email: Email,
-    public readonly password: PasswordHash,
-    public addresses: Array<Address> = [],
+    private _email: Email,
+    private _password: PasswordHash,
+    private _addresses: Array<Address> = [],
   ) {}
 
+  get email() {
+    return this._email;
+  }
+
+  public updateEmail(email: Email) {
+    this._email = email;
+  }
+
+  get password() {
+    return this._password;
+  }
+
+  public updatePassword(password: PasswordHash) {
+    this._password = password;
+  }
+
+  get addresses(): ReadonlyArray<Address> {
+    return this._addresses;
+  }
+
   public addAddress(address: Address): void {
-    if (this.addresses.length >= 5) {
+    if (this._addresses.length >= 5) {
       throw new CustomerLimitAddressError();
     }
 
-    this.addresses.push(address);
+    this._addresses.push(address);
   }
 
   public removeAddress(id: Uuid): void {
-    const index = this.addresses.findIndex(
+    const index = this._addresses.findIndex(
       (address) => address.id.value === id.value,
     );
 
     if (index === -1) throw new AddressNotFoundError();
 
-    this.addresses.splice(index, 1);
+    this._addresses.splice(index, 1);
   }
 
   public updateAddress(newInfos: Address) {
-    const index = this.addresses.findIndex(
+    const index = this._addresses.findIndex(
       (address) => address.id.value === newInfos.id.value,
     );
 
     if (index === -1) throw new AddressNotFoundError();
 
-    this.addresses[index] = newInfos;
+    this._addresses[index] = newInfos;
   }
 }
 
