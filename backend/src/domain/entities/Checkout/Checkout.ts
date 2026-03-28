@@ -1,9 +1,9 @@
-import CheckoutStatus from "@/domain/value-objects/CheckoutStatus/CheckoutStatus";
-import Uuid from "@/domain/value-objects/Uuid/Uuid";
-import CheckoutItem from "../CheckoutItem/CheckoutItem";
+import CheckoutItemNotFoundError from "@/domain/errors/not-found/CheckoutItemNotFoundError";
+import type CheckoutStatus from "@/domain/value-objects/CheckoutStatus/CheckoutStatus";
 import Money from "@/domain/value-objects/Money/Money";
 import Quantity from "@/domain/value-objects/Quantity/Quantity";
-import CheckoutItemNotFoundError from "@/domain/errors/not-found/CheckoutItemNotFoundError";
+import type Uuid from "@/domain/value-objects/Uuid/Uuid";
+import CheckoutItem from "../CheckoutItem/CheckoutItem";
 
 class Checkout {
   private _total: Money = new Money(0, "BRL");
@@ -22,7 +22,7 @@ class Checkout {
 
   public addCheckoutItem(checkoutItem: CheckoutItem) {
     const index = this._checkoutItems.findIndex(
-      (item) => item.productId.value == checkoutItem.productId.value,
+      (item) => item.productId.value === checkoutItem.productId.value,
     );
 
     if (index === -1) {
@@ -50,7 +50,7 @@ class Checkout {
 
   public removeCheckoutItem(checkoutItemId: Uuid) {
     const index = this._checkoutItems.findIndex(
-      (item) => item.id.value == checkoutItemId.value,
+      (item) => item.id.value === checkoutItemId.value,
     );
 
     if (index === -1) throw new CheckoutItemNotFoundError();
@@ -62,7 +62,7 @@ class Checkout {
 
   public updateCheckoutItem(checkoutItem: CheckoutItem) {
     const index = this._checkoutItems.findIndex(
-      (item) => item.id.value == checkoutItem.id.value,
+      (item) => item.id.value === checkoutItem.id.value,
     );
 
     if (index === -1) throw new CheckoutItemNotFoundError();

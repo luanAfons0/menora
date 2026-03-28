@@ -1,6 +1,6 @@
-import Money from "@/domain/value-objects/Money/Money";
-import Quantity from "@/domain/value-objects/Quantity/Quantity";
-import Uuid from "@/domain/value-objects/Uuid/Uuid";
+import type Money from "@/domain/value-objects/Money/Money";
+import type Quantity from "@/domain/value-objects/Quantity/Quantity";
+import type Uuid from "@/domain/value-objects/Uuid/Uuid";
 
 class CheckoutItem {
   constructor(
