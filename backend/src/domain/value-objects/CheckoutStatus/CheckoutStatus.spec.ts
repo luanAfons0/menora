@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import CheckoutStatus from "./CheckoutStatus";
 import InvalidCheckoutStatusError from "@/domain/errors/validation/InvalidCheckoutStatusError";
+import CheckoutStatus from "./CheckoutStatus";
 
 describe("CheckoutStatus", () => {
   it("Should create a valid CheckoutStatus", () => {

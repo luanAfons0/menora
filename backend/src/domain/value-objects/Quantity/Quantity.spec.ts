@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import Quantity from "./Quantity";
 import InvalidQuantityError from "@/domain/errors/validation/InvalidQuantityError";
+import Quantity from "./Quantity";
 
 describe("Quantity", () => {
   it("should create a valid Quantity", () => {
