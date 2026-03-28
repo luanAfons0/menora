@@ -1,8 +1,8 @@
 import InvalidMoneyError from "@/domain/errors/validation/InvalidMoneyError";
 
 class Money {
-  public amount: number;
-  public currency: string = "BRL";
+  public readonly amount: number;
+  public readonly currency: string = "BRL";
 
   constructor(rawAmount: number, rawCurrency?: string) {
     if (!Number.isFinite(rawAmount)) {

@@ -1,7 +1,7 @@
 import { InvalidAddressNumberError } from "@/domain/errors";
 
 class AddressNumber {
-  public value: string;
+  public readonly value: string;
 
   constructor(raw: string) {
     if (/[a-zA-Z]/.test(raw)) {

@@ -1,7 +1,7 @@
 import InvalidProductNameError from "@/domain/errors/validation/InvalidProductNameError";
 
 class ProductName {
-  public value: string;
+  public readonly value: string;
 
   constructor(raw: string) {
     if (!raw || raw.trim().length < 3) {

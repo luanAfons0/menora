@@ -1,7 +1,7 @@
 import InvalidUuidError from "@/domain/errors/validation/InvalidUuid";
 
 class Uuid {
-  public value: string;
+  public readonly value: string;
 
   constructor(raw: string) {
     if (

@@ -1,7 +1,7 @@
 import InvalidSKUError from "@/domain/errors/validation/InvalidSKUError";
 
 class SKU {
-  public value: string;
+  public readonly value: string;
 
   constructor(raw: string) {
     if (!/^[A-Z0-9-]+$/.test(raw)) {

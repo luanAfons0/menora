@@ -1,7 +1,7 @@
 import { InvalidPasswordError } from "@/domain/errors";
 
 class Password {
-  public value: string;
+  public readonly value: string;
 
   constructor(raw: string) {
     if (raw.length < 8) {

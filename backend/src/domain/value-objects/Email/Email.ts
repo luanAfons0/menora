@@ -1,7 +1,7 @@
 import { InvalidEmailError } from "@/domain/errors";
 
 class Email {
-  public value: string;
+  public readonly value: string;
 
   constructor(raw: string) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(raw)) {

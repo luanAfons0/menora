@@ -1,5 +1,5 @@
 class PasswordHash {
-  private constructor(public hash: string) {}
+  private constructor(public readonly hash: string) {}
 
   static from(hash: string): PasswordHash {
     return new PasswordHash(hash);

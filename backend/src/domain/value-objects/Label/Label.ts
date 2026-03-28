@@ -1,7 +1,7 @@
 import { ValidationError } from "@/domain/errors";
 
 class Label {
-  public value: string;
+  public readonly value: string;
 
   constructor(raw: string) {
     if (!/^[\w&.-]+$/.test(raw)) {
