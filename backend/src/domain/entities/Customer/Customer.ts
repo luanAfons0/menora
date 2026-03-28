@@ -9,8 +9,8 @@ class Customer {
     public readonly id: Uuid,
     public firstName: string,
     public lastName: string,
-    public email: Email,
-    public password: PasswordHash,
+    public readonly email: Email,
+    public readonly password: PasswordHash,
     public addresses: Array<Address> = [],
   ) {}
 

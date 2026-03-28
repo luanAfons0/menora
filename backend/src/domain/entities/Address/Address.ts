@@ -9,8 +9,8 @@ class Address {
     public city: string,
     public state: string,
     public country: string,
-    public zipCode: ZipCode,
-    public number: AddressNumber,
+    public readonly zipCode: ZipCode,
+    public readonly number: AddressNumber,
   ) {}
 }
 

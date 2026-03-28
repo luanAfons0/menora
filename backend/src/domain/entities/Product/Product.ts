@@ -11,11 +11,11 @@ import type Uuid from "@/domain/value-objects/Uuid/Uuid";
 class Product {
   constructor(
     public readonly id: Uuid,
-    public name: ProductName,
-    public sku: SKU,
-    public slug: Slug,
-    public price: Money,
-    public categoriesIds: Array<Uuid> = [],
+    public readonly name: ProductName,
+    public readonly sku: SKU,
+    public readonly slug: Slug,
+    public readonly price: Money,
+    public readonly categoriesIds: Array<Uuid> = [],
   ) {}
 
   public addCategory(uuid: Uuid) {
